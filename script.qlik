@@ -1,0 +1,17 @@
+SET DateFormat='D/MM/YYYY';
+SET TimestampFormat='D/MM/YYYY hh:mm:ss[.fff]';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='es-GT';
+SET MonthNames='ene.;feb.;mar.;abr.;may.;jun.;jul.;ago.;sep.;oct.;nov.;dic.';
+SET LongMonthNames='enero;febrero;marzo;abril;mayo;junio;julio;agosto;septiembre;octubre;noviembre;diciembre';
+SET DayNames='lun.;mar.;mié.;jue.;vie.;sáb.;dom.';
+SET LongDayNames='lunes;martes;miércoles;jueves;viernes;sábado;domingo';
+
+ODBC CONNECT TO mysqldns;
+
+SQL SELECT facturas.*, empleados.fecha_contratacion FROM gerenciales1.facturas 
+INNER JOIN gerenciales1.empleados ON facturas.id = empleados.id;
+
